@@ -9,12 +9,13 @@ class CorsairsController < ApplicationController
       flash[:success] = "Bienvenue sur notre site trop bien!"
       redirect_to corsairs_path
     else
-      render "new"
+      flash[:failure] = "Allo t'as rien écrit"
+      redirect_to new_corsair_path
     end
   end
 
   def user_params
-    params.require(:corsair).permit(:first_name, :age)
+    params.require(:corsair).permit(:first_name, :age, :bio, :slack_handle, :github_handle)
   end
 
   def update

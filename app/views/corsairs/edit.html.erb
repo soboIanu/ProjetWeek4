@@ -1,10 +1,12 @@
 <h1> Edition de Corsaire </h1>
   <%= form_for @corsair do |c| %>
   <%= c.label :first_name, "Change ton blaze" %>
+  <br>
   <%= c.text_field :first_name, class: "form_control" %>
   <br>
   <%= c.label :age, "Change ton âge" %>
-  <%= c.text_field :age, class: "form_control" %>
+  <br>
+  <%= c.select :age, (15..100) %>
   <br>
   <%= c.submit "Changer Corsaire", class: "btn-lg" %>
   <%= button_to "Supprimer", "corsair_path", method: "delete", class: "btn-lg btn-danger" %>

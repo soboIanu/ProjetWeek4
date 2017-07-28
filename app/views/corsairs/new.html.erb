@@ -1,10 +1,24 @@
 <h1> Création de Corsaire </h1>
   <%= form_for @corsair do |c| %>
   <%= c.label :first_name, "Rentre ton blaze" %>
+  <br>
   <%= c.text_field :first_name, class: "form_control" %>
   <br>
   <%= c.label :age, "Rentre ton âge" %>
-  <%= c.text_field :age, class: "form_control" %>
+  <br>
+  <%= c.select :age, (15..100) %>
+  <br>
+  <%= c.label :bio, "Rentre ta bio" %>
+  <br>
+  <%= c.text_area :bio, class: "form_control" %>
+  <br>
+  <%= c.label :slack_handle, "Rentre ton pseudo Slack" %>
+  <br>
+  <%= c.text_field :slack_handle, class: "form_control" %>
+  <br>
+  <%= c.label :github_handle, "Rentre ton pseudo Git" %>
+  <br>
+  <%= c.text_field :github_handle, class: "form_control" %>
   <br>
   <%= c.submit "Créer Corsaire" %>
   <% end %>

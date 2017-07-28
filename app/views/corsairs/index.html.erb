@@ -1,7 +1,8 @@
 <h1>Liste de l'équipage</h1>
 <ol>
   <% @corsairs.each do |c| %>
-  <li>Corsaire <%= c.first_name %> : <%= c.age %> ans <%= link_to "Voir le profil", corsair_path(c.id) %></li>
+  <li>Corsaire <%= c.first_name %> : <%= c.age %> ans <%= link_to "Voir le profil", corsair_path(c.id) %> <br>Github: 
+  <%= link_to c.github_handle.to_s, "https://github.com/" + c.github_handle.to_s %></li>
   <% end %>
 </ol>
-<%= button_to "Créer un corsaire", "new_corsair_path", method: "GET", class: "btn-lg" %>
+<%= link_to "Créer un corsaire", new_corsair_path, method: "GET", class: "btn-lg" %>
