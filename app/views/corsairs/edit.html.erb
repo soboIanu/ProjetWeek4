@@ -8,6 +8,18 @@
   <br>
   <%= c.select :age, (15..100) %>
   <br>
+  <%= c.label :bio, "Change ta bio" %>
+  <br>
+  <%= c.text_area :bio, class: "form_control" %>
+  <br>
+  <%= c.label :slack_handle, "Change ton pseudo Slack" %>
+  <br>
+  <%= c.text_field :slack_handle, class: "form_control" %>
+  <br>
+  <%= c.label :github_handle, "Change ton pseudo Git" %>
+  <br>
+  <%= c.text_field :github_handle, class: "form_control" %>
+  <br>
   <%= c.submit "Changer Corsaire", class: "btn-lg" %>
   <%= button_to "Supprimer", "corsair_path", method: "delete", class: "btn-lg btn-danger" %>
   <% end %>

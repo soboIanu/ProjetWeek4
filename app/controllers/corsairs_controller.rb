@@ -15,7 +15,7 @@ class CorsairsController < ApplicationController
   end
 
   def user_params
-    params.require(:corsair).permit(:first_name, :age, :bio, :slack_handle, :github_handle)
+    params.require(:corsair).permit(:first_name, :age, :bio, :likeness, :slack_handle, :github_handle)
   end
 
   def update

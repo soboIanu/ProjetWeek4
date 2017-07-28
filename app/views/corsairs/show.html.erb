@@ -1,5 +1,19 @@
 <h1>Bienvenue <%= @corsair.first_name%> !</h1>
 <h2>Tu as <%= @corsair.age%> ans !</h2>
-<p>Voici ta vie: <%= @corsair.bio %></p>
-<p>Ton pseudo Slack: <%= @corsair.slack_handle %></p>
-<p>Ton pseudo Github: <%= @corsair.github_handle %></p>
+<% if @corsair.bio != "" && @corsair.bio != nil %>
+  <p>Voici la vie de <%= @corsair.first_name%> : <%=@corsair.bio%></p> <!-- William style -->
+<% else %>
+	<p><%=@corsair.first_name%> n'a pas encore renseigné sa vie !</p>
+<% end %>
+
+<% if @corsair.slack_handle != "" && @corsair.slack_handle != nil %>
+	<p>Voici le pseudo Slack de <%=@corsair.first_name%> : <%= link_to @corsair.slack_handle.to_s, "https://thehackingproject.slack.com/team/" + @corsair.slack_handle.to_s %></p>
+<% else %>
+	<p><%=@corsair.first_name%> n'a pas encore renseigné son pseudo Slack !</p>
+<% end %>
+
+<% if @corsair.github_handle != "" && @corsair.github_handle != nil %>
+	<p>Voici le pseudo Github de <%=@corsair.first_name%> : <%= link_to @corsair.github_handle.to_s, "https://github.com/" + @corsair.github_handle.to_s %></p>
+  <% else %>
+	<p><%=@corsair.first_name%> n'a pas encore renseigné son pseudo Github !</p>
+<% end %>
