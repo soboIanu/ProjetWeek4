@@ -6,7 +6,7 @@ class CorsairsController < ApplicationController
   def create
     @corsair = Corsair.new(corsair_params)
     if @corsair.save
-      flash[:success] = "Utilisateur " + @corsair.first_name + " créé !"
+      flash[:success] = "Corsair " + @corsair.first_name.capitalize + " créé !"
       redirect_to corsairs_path
     else
       flash[:failure] = "Allo t'as rien écrit"
@@ -33,7 +33,7 @@ class CorsairsController < ApplicationController
   def destroy
     @corsair = Corsair.find(params[:id])
     @corsair = @corsair.destroy
-    flash[:success] = "Corsair supprimé !"
+    flash[:success] = "Corsair " + @corsair.first_name.capitalize + " supprimé !"
     redirect_to corsairs_url
   end
 

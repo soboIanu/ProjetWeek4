@@ -5,8 +5,8 @@
   <%= render "shared/error_messages" %>
   <%= c.label :likeness, "Quel est ton pêché mignon?" %>
   <br>
-  <%= c.radio_button :likeness, 'Kebab', :checked => true %> Kebab
-  <%= c.radio_button :likeness, 'Hummus' %> Hummus
+  <div class="div_kebab"> <%= c.radio_button :likeness, 'Kebab', :checked => true %> Kebab 
+  <%= c.radio_button :likeness, 'Hummus' %> Hummus </div>
   <br>
   <%= c.label :first_name, "Rentre ton blaze" %>
   <br>
