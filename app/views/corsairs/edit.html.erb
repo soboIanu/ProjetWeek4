@@ -1,4 +1,4 @@
-<h1> Edition de Corsaire </h1>
+<h1> Edition du Corsaire </h1>
   <%= form_for @corsair do |c| %>
   <%= c.label :first_name, "Change ton blaze" %>
   <br>
@@ -20,6 +20,6 @@
   <br>
   <%= c.text_field :github_handle, class: "form_control" %>
   <br>
-  <%= c.submit "Changer Corsaire", class: "btn-lg" %>
-  <%= button_to "Supprimer", "corsair_path", method: "delete", class: "btn-lg btn-danger" %>
+  <%= c.submit "Editer Corsaire", class: "btn-lg" %>
   <% end %>
+  <%= button_to "Supprimer", "corsair_path", method: "delete", class: "btn-lg btn-danger" %>

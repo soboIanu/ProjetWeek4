@@ -4,7 +4,7 @@ class CorsairsController < ApplicationController
   end
 
   def create
-    @corsair = Corsair.new(user_params)
+    @corsair = Corsair.new(corsair_params)
     if @corsair.save
       flash[:success] = "Bienvenue sur notre site trop bien!"
       redirect_to corsairs_path
@@ -14,11 +14,15 @@ class CorsairsController < ApplicationController
     end
   end
 
-  def user_params
+  def corsair_params
     params.require(:corsair).permit(:first_name, :age, :bio, :likeness, :slack_handle, :github_handle)
   end
 
   def update
+    @corsair = Corsair.find(params[:id])
+    @corsair.update(corsair_params)
+
+    redirect_to corsairs_url(@corsair)
   end
 
   def edit
