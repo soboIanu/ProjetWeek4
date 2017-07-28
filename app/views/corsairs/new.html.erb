@@ -1,6 +1,8 @@
 <h1> Création de Corsaire </h1>
 <br>
+
   <%= form_for @corsair do |c| %>
+  <%= render "shared/error_messages" %>
   <%= c.label :likeness, "Quel est ton pêché mignon?" %>
   <br>
   <%= c.radio_button :likeness, 'Kebab', :checked => true %> Kebab

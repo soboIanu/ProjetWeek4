@@ -10,7 +10,8 @@ class CorsairsController < ApplicationController
       redirect_to corsairs_path
     else
       flash[:failure] = "Allo t'as rien écrit"
-      redirect_to new_corsair_path
+      #redirect_to new_corsair_path
+      render "new"
     end
   end
 

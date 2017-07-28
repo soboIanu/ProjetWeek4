@@ -1,0 +1,12 @@
+<% if @corsair.errors.any? %>
+ <div id="error_explanation">
+   <div class="alert alert-danger">
+     Il y a  <%= pluralize(@corsair.errors.count, "erreur") %> espèce de teubé.
+   </div>
+   <ul>
+   <% @corsair.errors.full_messages.each do |msg| %>
+     <li><%= msg %></li>
+   <% end %>
+   </ul>
+ </div>
+<% end %>

@@ -2,7 +2,7 @@
 <h2>Tu as <%= @corsair.age%> ans !</h2>
 
   <p><%= @corsair.first_name%> préfère le <%=@corsair.likeness%></p> <!-- William style -->
-  
+
 <% if @corsair.bio != "" && @corsair.bio != nil %>
   <p>Voici la vie de <%= @corsair.first_name%> : <%=@corsair.bio%></p> <!-- William style -->
 <% else %>
