@@ -1,0 +1,10 @@
+<h1> Création de Corsaire </h1>
+  <%= form_for @corsair do |c| %>
+  <%= c.label :first_name, "Rentre ton blaze" %>
+  <%= c.text_field :first_name, class: "form_control" %>
+  <br>
+  <%= c.label :age, "Rentre ton âge" %>
+  <%= c.text_field :age, class: "form_control" %>
+  <br>
+  <%= c.submit "Créer Corsaire" %>
+  <% end %>

@@ -1,0 +1,3 @@
+class Corsair < ApplicationRecord
+  
+end
