@@ -1,3 +1,9 @@
+<% if flash[:success] %>
+<%= flash[:success] %>
+<% else %>
+<%= flash[:failure] %>
+<% end %>
+
 <h1>Liste de l'équipage</h1>
 <ol>
   <% @corsairs.each do |c| %>

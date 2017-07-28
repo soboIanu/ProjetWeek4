@@ -6,7 +6,7 @@ class CorsairsController < ApplicationController
   def create
     @corsair = Corsair.new(corsair_params)
     if @corsair.save
-      flash[:success] = "Bienvenue sur notre site trop bien!"
+      flash[:success] = "Utilisateur " + @corsair.first_name + " créé !"
       redirect_to corsairs_path
     else
       flash[:failure] = "Allo t'as rien écrit"
